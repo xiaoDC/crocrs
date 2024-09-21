@@ -1,0 +1,12 @@
+[package]
+name = "peerdiscovery"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = { workspace = true }
+tokio = { workspace = true }
+socket2 = { workspace = true }
+
+pnet = { version = "0.35", default-features = false, features = ["std"] }
+ipnetwork = "0.20"

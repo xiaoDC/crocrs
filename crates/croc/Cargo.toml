@@ -1,0 +1,47 @@
+[package]
+name = "croc"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = { workspace = true }
+tokio = { workspace = true }
+socket2 = { workspace = true }
+# crossbeam-utils = { workspace = true }
+crossbeam-channel = { workspace = true }
+
+async-channel = "2"
+byteorder = "1"
+# bytes = "1"
+clap = { version = "4", default-features = false, features = [
+  "derive",
+  "std",
+  "help",
+  "env",
+] }
+dirs = "5"
+futures = "0.3"
+lazy_static = "1"
+tracing = { version = "0.1", default-features = false, features = [
+  "std",
+  "attributes",
+] }
+tracing-subscriber = { version = "0.3", default-features = false, features = [
+  "std",
+  "ansi",
+  "fmt",
+] }
+parking_lot = { version = "0.12", default-features = false, features = [
+  "arc_lock",
+] }
+
+spake2 = "0.4"
+rand = { version = "0.8", default-features = false, features = ["std_rng"] }
+pbkdf2 = { version = "0.12", default-features = false, features = ["hmac"] }
+sha2 = "0.10"
+# hex = "0.4"
+aes-gcm = { version = "0.10", default-features = false, features = [
+  "aes",
+  "alloc",
+  "getrandom",
+] }

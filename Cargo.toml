@@ -1,0 +1,31 @@
+[workspace]
+resolver = "2"
+
+members = ["crates/croc", "crates/peerdiscovery"]
+
+[profile.dev]
+split-debuginfo = "unpacked"
+debug = false
+opt-level = 1
+
+[profile.test]
+debug = false
+
+[profile.release]
+# debug = true
+panic = 'abort'
+lto = true
+codegen-units = 1
+# strip = true
+opt-level = 3
+# opt-level = 's' # 优化尺寸
+# opt-level = 'z'
+
+[workspace.dependencies]
+anyhow = "1"
+tokio = { version = "1", default-features = false, features = ["full"] }
+# crossbeam-utils = { version = "0.8", default-features = false, features = [
+#   "std",
+# ] }
+crossbeam-channel = "0.5"
+socket2 = "0.5"

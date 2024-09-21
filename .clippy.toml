@@ -1,0 +1,6 @@
+disallowed-methods = [
+  { path = "std::io::Write::write", reason = "This doesn't handle short writes, use `write_all` instead." },
+]
+
+msrv = "1.70"
+avoid-breaking-exported-api = true
